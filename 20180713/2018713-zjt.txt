@@ -1,0 +1,32 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf400
+{\fonttbl\f0\fnil\fcharset134 PingFangSC-Regular;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\sl-380\pardirnatural\partightenfactor0
+
+\f0\fs26 \cf0 \'d7\'dc\'bd\'e1\'d2\'bb\'cf\'c2\'bd\'f1\'cc\'ec\'a3\'ba\'ce\'d2\'bd\'f1\'cc\'ec\'b8\'c4\'c1\'cb\'ba\'dc\'b6\'e0\'b5\'d8\'b7\'bd\'ba\'dc\'b6\'e0\'bd\'c7\'b6\'c8
+\f1  
+\f0 \'d7\'dc\'b5\'c4\'b8\'c4\'b7\'a8\'ca\'c7
+\f1  
+\f0 \'b0\'d1\'cb\'d9\'b6\'c8\'d5\'fb\'cc\'e5\'cf\'c2\'b5\'f7\'a3\'ac
+\f1 small mid large 
+\f0 \'c8\'fd\'d5\'df\'b5\'c4\'cb\'d9\'b6\'c8\'ce\'aa\'b5\'dd\'bc\'f5\'cc\'ac\'ca\'c6\'a3\'ac\'c6\'d5\'b1\'e9\'d4\'f6\'bc\'d3\'c1\'cb\'bd\'c7\'b6\'c8\'b5\'c4\'d7\'aa\'cf\'f2\'b7\'f9\'b6\'c8\'a1\'a3\'d4\'da\'b5\'e7\'cf\'e0\'b6\'d4\'b1\'a5\'ba\'cd\'b5\'c4\'c7\'e9\'bf\'f6\'cf\'c2\'d7\'ee\'ba\'c3\'c7\'e9\'bf\'f6\'c4\'dc\'cd\'ea\'b3\'c9\'cb\'f9\'d3\'d0\'b5\'c6\'b5\'c4\'d7\'aa\'cf\'f2\'a1\'a3\'bd\'f1\'cd\'ed\'b1\'a9\'c2\'b6\'b5\'c4\'ce\'ca\'cc\'e2\'a3\'ba
+\f1 1.
+\f0 \'c7\'f8\'bc\'e4\'d3\'d0\'ce\'f3\'a3\'ac\'b2\'bf\'b7\'d6\'d7\'aa\'cf\'f2\'c7\'f8\'bc\'e4\'d3\'d0\'ce\'ca\'cc\'e2\'a1\'a3\'c3\'f7\'cc\'ec\'b2\'e2\'ca\'d4\'b5\'c4\'ca\'b1\'ba\'f2\'b2\'e9\'bf\'b4
+\f1  log.txt 
+\f0 \'bf\'c9\'d2\'d4\'b5\'c3\'b3\'f6\'a1\'a3\'bd\'f1\'cc\'ec\'b7\'a2\'cf\'d6\'b5\'c4\'ca\'c7\'d7\'f3\'cf\'c2\'bd\'c7\'ba\'cd\'d7\'f3\'c9\'cf\'bd\'c7\'b5\'c4\'d7\'f3\'d3\'d2\'d7\'aa\'cf\'f2\'d3\'d0\'ce\'f3\'a3\'ac\'b2\'a2\'c7\'d2\'d3\'d0\'b2\'bf\'b7\'d6\'c7\'e9\'bf\'f6\'cf\'c2\'b5\'c4
+\f1  straight 
+\f0 \'d3\'d0\'ce\'f3
+\f1  2.
+\f0 \'b9\'d8\'d3\'da\'d6\'b1\'cf\'df\'c5\'dc\'b6\'af\'a3\'ac\'ce\'d2\'c9\'e8\'b6\'a8\'c1\'cb\'d2\'bb\'b6\'a8\'b5\'c4\'c6\'ab\'d7\'aa\'bd\'c7\'b7\'c0\'d6\'b9\'d7\'b2\'b5\'c6\'a1\'a3
+\f1 3.
+\f0 \'b9\'d8\'d3\'da
+\f1  sleep 
+\f0 \'a3\'ac\'ce\'d2\'cf\'d6\'d4\'da\'b5\'f7\'d5\'fb\'b5\'bd\'c1\'cb
+\f1  0.25s 
+\f0 \'cb\'e4\'c8\'bb\'ba\'c3\'c1\'cb\'d2\'bb\'d0\'a9\'a3\'ac\'bf\'c9\'ca\'c7\'bb\'b9\'ca\'c7\'bb\'e1\'d3\'d0\'b6\'cf\'cf\'df\'c7\'e9\'bf\'f6\'a3\'ac\'bf\'c9\'c4\'dc\'ca\'c7\'c6\'e4\'d3\'e0\'b5\'c4
+\f1  sleep 
+\f0 \'ca\'b1\'bc\'e4\'bb\'b9\'ca\'c7\'b9\'fd\'b6\'cc
+\f1  4. 
+\f0 \'b2\'e2\'ca\'d4\'d0\'a1\'b3\'b5\'b5\'c4\'ca\'b1\'ba\'f2\'b1\'d8\'d0\'eb\'d2\'aa\'b0\'d1\'b5\'e7\'b3\'e4\'c2\'fa\'a3\'ac\'c2\'fa\'b5\'e7\'d7\'b4\'cc\'ac\'ba\'cd\'c8\'b1\'b5\'e7\'d7\'b4\'cc\'ac\'b2\'ce\'ca\'fd\'b2\'ee\'be\'e0\'c3\'f7\'cf\'d4\'a1\'a3}
