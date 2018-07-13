@@ -13,7 +13,9 @@ void Rudder(int angle) {
 
 void setup() 
 {
-  Serial.begin(115200);
+  // origin
+  // Serial.begin(115200);
+  Serial.begin(57600);
   pinMode(5, OUTPUT);
   pinMode(6, OUTPUT);
   pinMode(9,OUTPUT);
