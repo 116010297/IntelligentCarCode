@@ -23,17 +23,17 @@ def Variance(l):
 
 def Initialize():
     global camera,ser,f
-##    f = open("log.txt","a")
+    f = open("log.txt","a")
     camera = PiCamera()
     camera.resolution = (640,544)
     camera.framerate = 60
     print 'Camera initialized...'
-##    f.write('Camera initialized...\n')
+    f.write('Camera initialized...\n')
     
     ser = serial.Serial('/dev/ttyUSB0',57600,timeout=1)
     # ser.write('038300000000/')
     print 'Serial initialized...\n'
-##    f.write('Serial initialized...\n\n')
+    f.write('Serial initialized...\n\n')
     
 
 def Snapshot():    
@@ -122,68 +122,68 @@ def Calculate(image, threshold, rangefinder, range_pic_ratio):
         else:
             sign_car_side = 'left'
             
-##        print 'angle:',angle, 'sign_car_side:',sign_car_side
-##        f.write('angle:'+str(angle) + 'sign_car_side:'+ str(sign_car_side) +'\n')
+        print 'angle:',angle, 'sign_car_side:',sign_car_side,'real_car_signal_distance',real_car_signal_distance
+        f.write('angle:'+str(angle) + 'sign_car_side:'+ str(sign_car_side) +'\n'+'real_car_signal_distance'+str(real_car_signal_distance))
         
 ##        cv2.imwrite("route.jpg",image)
         return (4, car_head, car_tail, center_sign, car_signal_distance, real_car_signal_distance, angle, sign_car_side)
 
     elif len(contours_OK) == 1:
-##        print 'Out of range!'
-##        f.write('Out of range!\n')
+        print 'Out of range!'
+        f.write('Out of range!\n')
         return (1, None, None, None, None, None, None, None)
     
     else:
-##        print 'len(contours_OK): ', len(contours_OK)
-##        f.write('len(contours_OK): '+str(len(contours_OK))+'\n')
-##        print 'No target found!'
-##        f.write('No target found!\n')
+        print 'len(contours_OK): ', len(contours_OK)
+        f.write('len(contours_OK): '+str(len(contours_OK))+'\n')
+        print 'No target found!'
+        f.write('No target found!\n')
         return (0, None, None, None, None, None, None, None)
 
 
 def Turn_right_small_near(angle):
-    str_angle = str(int(round((angle - 24)/1.6 + 90))).rjust(3,'0')
-    s = '100000'+str_angle
+    str_angle = str(int(round((angle - 24)/1.6 + 95))).rjust(3,'0')
+    s = '090000'+str_angle
     ser.write(s)
 
     # steer = 383 - (round((angle - 24)/2) + 5)
     # ser.write('0'+str(int(steer))+'00000150/')
     print 'turn right small near'
-##    f.write("turn right small near\n")
+    f.write("turn right small near\n")
    
 def Turn_right_mid_near(angle):
 
-    str_angle = str(int(round((angle - 24)/1.6 + 90))).rjust(3,'0')
-    s = '100000'+str_angle
+    str_angle = str(int(round((angle - 24)/1 + 103))).rjust(3,'0')
+    s = '095000'+str_angle
     ser.write(s)
 
     # steer = 383 - (round((angle - 60)/2) + 23)
     # ser.write('0'+str(int(steer))+'00000150/')
     print 'turn right mid near'
-##    f.write("turn right mid near\n")
+    f.write("turn right mid near\n")
     
 def Turn_right_big_near():
 
-    ser.write('110000130')
+    ser.write('100000140')
 
     # ser.write('034200000150/')
     print "turn right big near"
-##    f.write("turn right big near\n")
+    f.write("turn right big near\n")
 
 def Turn_left_small_near(sign_car_side, angle):
     if sign_car_side == 'right':
-        str_angle = str(int(round((angle - 24)/1.6 + 90))).rjust(3,'0')
+        str_angle = str(int(round((angle - 24)/2.4 + 85))).rjust(3,'0')
     elif sign_car_side == 'left':
-        str_angle = str(int(round(angle/(-2) + 95))).rjust(3,'0')
+        str_angle = str(int(round(angle/(-2.9) + 90))).rjust(3,'0')
 
-    s = '100000'+str_angle
+    s = '095000'+str_angle
     ser.write(s)
     print "turn left small near"
-##    f.write("turn left small near\n")
+    f.write("turn left small near\n")
 
 def Turn_left_mid_near(angle):
 
-    str_angle = str(int(round(angle/(-2) + 95))).rjust(3,'0')
+    str_angle = str(int(round((angle-24)/(-1) + 90))).rjust(3,'0')
                 
     s = '100000'+str_angle
     ser.write(s)
@@ -191,15 +191,15 @@ def Turn_left_mid_near(angle):
     # steer = 383 + (round((angle - 22)/2) + 23)
     # ser.write('0'+str(int(steer))+'00000150/')
     print 'turn left mid near'
-##    f.write("turn left mid near\n")
+    f.write("turn left mid near\n")
     
 def Turn_left_big_near():
-    ser.write('100000040')
+    ser.write('110000042')
     print "turn left big near"
-##    f.write("turn left big near\n")
+    f.write("turn left big near\n")
  
 def Turn_right_small_far(angle):
-    str_angle = str(int(round((angle - 24)/1.6 + 90))).rjust(3,'0')
+    str_angle = str(int(round((angle - 24)/1.6 + 92))).rjust(3,'0')
                 
     s = '110000'+str_angle
     ser.write(s)
@@ -207,35 +207,35 @@ def Turn_right_small_far(angle):
     # steer = 383 - (round((angle - 16)/2) + 5)
     # ser.write('0'+str(int(steer))+'00000190/')
     print "turn right small far"
-##    f.write("turn right small far\n")
+    f.write("turn right small far\n")
 
 def Turn_right_mid_far(angle):
     str_angle = str(int(round((angle - 24)/1.6 + 90))).rjust(3,'0')
                 
-    s = '110000'+str_angle
+    s = '120000'+str_angle
     ser.write(s)
 
     # steer = 383 - (round((angle - 52)/ 2 ) + 23)
     # ser.write('0'+str(int(steer))+'00000170/')
     print 'turn right mid far'
-##    f.write("turn right mid far\n")
+    f.write("turn right mid far\n")
 
 def Turn_right_big_far():
-    ser.write('110000130')
+    ser.write('113000140')
     print "turn right big far"
-##    f.write("turn right big far\n")
+    f.write("turn right big far\n")
         
 def Turn_left_small_far(sign_car_side, angle):
     if sign_car_side == 'right':
-        str_angle = str(int(round((angle - 24)/1.6 + 90))).rjust(3,'0')  
+        str_angle = str(int(round((angle - 24)/2 + 85))).rjust(3,'0')  
         # steer = 383 + (round((4 - angle) / 2) + 5)
     elif sign_car_side == 'left':
-        str_angle = str(int(round(angle/(-2) + 95))).rjust(3,'0') 
-    s = '130000'+str_angle
+        str_angle = str(int(round(angle/(-2) + 87))).rjust(3,'0') 
+    s = '110000'+str_angle
     ser.write(s)
 
     print "turn left small far"
-##    f.write("turn left small far\n")
+    f.write("turn left small far\n")
 
 def Turn_left_mid_far(angle):
     str_angle = str(int(round(angle/(-2) + 95))).rjust(3,'0') 
@@ -244,61 +244,61 @@ def Turn_left_mid_far(angle):
     ser.write(s)
     
     print 'turn left mid far'
-##    f.write("turn left mid far\n")
+    f.write("turn left mid far\n")
 
 def Turn_left_big_far():
-    ser.write('100000045')
+    ser.write('100000040')
 
     # ser.write('042400000150/')
     print "turn left big far"
-##    f.write("turn left big far\n")
+    f.write("turn left big far\n")
 
 def Straight_fast():
 
-    ser.write('130000090')
+    ser.write('105000092')
     print "straight fast"
-##    f.write("straight fast\n")
+    f.write("straight fast\n")
 
 def Straight_slow():
-    ser.write('100000090')
+    ser.write('090000088')
     print "straight slow"
-##    f.write("straight slow\n")
+    f.write("straight slow\n")
 
 def Stop_control():
     ser.write('000000090')
     print "stop control"
-##    f.write("stop control\n")
+    f.write("stop control\n")
     
 def Back():
-    ser.write('000110090')
+    ser.write('000100088')
     # ser.write('038301700000/')
     print "back"
-##    f.write("back\n")
+    f.write("back\n")
     
 def Back_angle(angle):
     steer = 90 - angle
     ser.write('000110'+str(int(steer)).rjust(3,'0'))
     print "back angle"
-##    f.write("back angle\n")
+    f.write("back angle\n")
     
 def Turn_angle(angle):
     steer = 90 - angle
     ser.write('000100'+str(int(steer)).rjust(3,'0'))
     print "turn angle"
-##    f.write("turn angle\n")
+    f.write("turn angle\n")
 
     
 def Control(angle, sign_car_side, real_car_signal_distance):  
     if real_car_signal_distance < 1.2:
-        if (sign_car_side == 'right' and angle < 24 and angle > 14):
+        if (sign_car_side == 'right' and angle < 16 and angle > 6):
             Straight_slow()
-        elif (sign_car_side == 'right' and angle >= 24 and angle <= 60):
+        elif (sign_car_side == 'right' and angle >= 16 and angle <= 60):
             Turn_right_small_near(angle)
         elif (sign_car_side == 'right' and angle > 60 and angle <= 90):
             Turn_right_mid_near(angle)
         elif (sign_car_side == 'right' and angle > 90 and angle <= 140):
             Turn_right_big_near()
-        elif (sign_car_side == 'right' and angle > 140 and angle <= 165):
+        elif (sign_car_side == 'right' and angle > 140 and angle <= 165) or (sign_car_side == 'left' and angle > 113 and angle <= 121):
             Turn_right_big_near()
             sleep(0.2)
         elif (sign_car_side == 'right' and angle > 165): #or (sign_car_side == 'left' and angle > 135)
@@ -310,37 +310,44 @@ def Control(angle, sign_car_side, real_car_signal_distance):
             Straight_slow() 
         elif (sign_car_side == 'left' and angle > 24 and angle <= 60):
             Turn_left_mid_near(angle)
-        elif (sign_car_side == 'left' and angle > 60 and angle <= 90):
+        elif (sign_car_side == 'left' and angle > 60 and angle <= 88):
             Turn_left_big_near()
+            sleep(0.2)
         elif (sign_car_side == 'left' and angle > 105 and angle <= 135):
             Turn_left_big_near()
             sleep(0.2)
         else:
             Stop_control()   
     else:
-        if (sign_car_side == 'right' and angle < 16 and angle > 4):
+        if (sign_car_side == 'right' and angle < 10 and angle > 4):
             Straight_fast()
-        elif (sign_car_side == 'right' and angle >= 16 and angle <= 52):
+        elif (sign_car_side == 'right' and 14 <= angle and angle <=20) or (sign_car_side == 'right' and 33 <= angle and angle <= 52):
             Turn_right_small_far(angle)
+            # added
+        elif (sign_car_side == 'right' and 20 < angle and angle < 33):
+            Turn_right_big_far()
+            sleep(0.2)
         elif (sign_car_side == 'right' and angle > 52 and angle <= 88):
             Turn_right_mid_far(angle)
         elif (sign_car_side == 'right' and angle > 88 and angle <= 140):
             Turn_right_big_far()
-        elif (sign_car_side == 'right' and angle > 140 and angle <= 165):
+            # add loc
+        elif (sign_car_side == 'right' and angle > 140 and angle <= 165) or (sign_car_side == 'left' and angle > 113 and angle <= 123):
             Turn_right_big_far()
             sleep(0.2)
         elif (sign_car_side == 'right' and angle > 165) or (sign_car_side == 'left' and angle > 135):
             Turn_right_big_far()
-            sleep(0.4)
-        elif (sign_car_side == 'right' and angle <= 4) or (sign_car_side == 'left' and angle <= 32):
+            sleep(0.2)
+        elif (sign_car_side == 'right' and angle <= 4) or (sign_car_side == 'left' and angle <= 35):
             Turn_left_small_far(sign_car_side, angle)
-        elif (sign_car_side == 'left' and angle > 32 and angle <= 68):
+            sleep
+        elif (sign_car_side == 'left' and angle > 35 and angle <= 68):
             Turn_left_mid_far(angle)
         elif (sign_car_side == 'left' and angle > 68  and angle <= 105):
             Turn_left_big_far()
-        elif (sign_car_side == 'left' and angle > 105  and angle <= 135):
+        elif (sign_car_side == 'left' and angle > 105 and angle <= 135):
             Turn_left_big_far()
-            sleep(0.2)
+            sleep(0.3)
         else:
             Stop_control()
 
@@ -354,6 +361,7 @@ def main():
     distance_list = [random.random()*5] * 20
     
     while True:
+        sleep(0.13)
 ##        time0 = time.time()
         rangefinder = 3.1 ##TA
         range_pic_ratio = 0.43 ##TA
@@ -375,29 +383,29 @@ def main():
                 Back_angle(random.randint(-15,15))
                 sleep(1.4)
                 distance_list = [random.random()*5] * 20
-##                print 'CRASH HANDLE...'
-##                f.write('CRASH HANDLE...\n')
+                print 'CRASH HANDLE...'
+                f.write('CRASH HANDLE...\n')
                 
             if sign_list.count(('right',True)) >= 27:
                 Turn_angle(random.randint(-30,-15))
-                sleep(0.65)
+                sleep(0.1)
                 sign_list = [(0,False)] * 30
-##                print 'ANGLE OPTIMIZED...'
-##                f.write('ANGLE OPTIMIZED...\n')
+                print 'ANGLE OPTIMIZED...'
+                f.write('ANGLE OPTIMIZED...\n')
                  
             Control(angle,sign_car_side,real_car_signal_distance)
-            sleep(0.2)
+            
             print 'CONTROLLING CAR...'
-##            f.write('CONTROLLING CAR...\n')
+            f.write('CONTROLLING CAR...\n')
             
         elif flag == 1:
             out_count = out_count + 1
             if out_count > 8:
                 # Back()
-                sleep(2)
+                sleep(1.5)
                 out_count = 0
                 print 'BACK...'
-    ##            f.write('BACK...\n')
+                f.write('BACK...\n')
             
         else:
             error_count = error_count + 1
@@ -405,7 +413,7 @@ def main():
                 Stop_control()
                 error_count = 0
                 print 'ERROR...'
-#                f.write('ERROR...\n')
+                f.write('ERROR...\n')
                 
 ##        time3 = time.time()
 ##        print
